@@ -13,6 +13,8 @@ About weather-pickmeup. What it is and who it is for?
 - Pulls in weather from OpenWeather API
 - User's search for weather in their location pulls up current weather and a giphy to cheer them up if the weather is bad or... if not
 
+### Screenshots
+
 ## Getting started
 
 ### Prerequisites
@@ -31,7 +33,7 @@ About weather-pickmeup. What it is and who it is for?
 
 ### Make the change and test
 
-1. Make chabes and check in the browser or live server
+1. Make changes and check in the browser or live server
 1. If possible, test any visual changes in all latest versions of common browsers, on both desktop and mobile
 1. Run Prettier or some other code linter and add meaningful, human-readable comments
 
@@ -50,3 +52,5 @@ About weather-pickmeup. What it is and who it is for?
 - Trilogy
 
 ## License
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
