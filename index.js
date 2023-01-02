@@ -1,4 +1,4 @@
-const API_KEY = "d685b7587c7c3a2cdab61107aff768ba"; // register for a free key at openweathermap.com
+const API_KEY = YOUR_API_KEY; // register for a free key at openweathermap.com
 
 // Assign HTML Elements to variables
 var searchBtn = document.querySelector("#search-button");
