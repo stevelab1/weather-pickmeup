@@ -6,6 +6,7 @@
 
 # exclude reference files
 notes.md
+test.html
 
 # ignore all files starting with . or ~
 .*

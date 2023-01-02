@@ -21,7 +21,7 @@ About weather-pickmeup. What it is and who it is for?
 
 1. Git
 1. A fork of the repo (for any contributions)
-1. A clone of the [weather-pickmeup](https://github.com/stevelab1/weather-pickmeup) on your local machine
+1. A clone of the [weather-pickmeup](https://github.com/stevelab1/weather-pickmeup) repo on your local machine
 
 ## Contributing Guidelines
 
