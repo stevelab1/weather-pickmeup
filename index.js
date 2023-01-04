@@ -132,6 +132,7 @@ console.log(queryURL);
       cityArrStored.forEach(function (city) {
         var btn = document.createElement("button");
         btn.textContent = city;
+        btn.classList.add("city-names");
         btn.addEventListener("click", function () {
           searchCity(city);
         });
