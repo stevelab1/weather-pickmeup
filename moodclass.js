@@ -12,12 +12,14 @@ var badWeather = [];
 //l6uqF7sCQPq99XoWHRKpST6mj2kZr5jK&q=London
 var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + API_KEY + "&q=" + searchQuery + "&limit=1&offset=0&rating=g&lang=en";
 
+console.log(queryURL);
+
 fetch(queryURL)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
-      var gif = data.url;
+      var gifURL = data.url;
       var currentHumidity = data.main.humidity;
       var currentWindSpeed = data.wind.speed;
       var currentWeatherIcon = data.weather[0].icon;
