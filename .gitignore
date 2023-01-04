@@ -7,6 +7,12 @@
 # exclude reference files
 notes.md
 test.html
+test2.html
+test.js
+test2.js
+test3.js
+teststyle.css
+teststyle2.css
 
 # ignore all files starting with . or ~
 .*
