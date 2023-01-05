@@ -43,7 +43,7 @@ function checkWeather(weatherCode) {
 
     // WMO Weather interpretation codes (WW): https://open-meteo.com/en/docs#latitude=0&longitude=0&current_weather=true
     console.log(weatherCode);
-    weatherCode = 65;
+    // weatherCode = 65;
     // Code - Description
 
     switch (weatherCode) {
@@ -79,13 +79,13 @@ function checkWeather(weatherCode) {
         case 51: case 53: case 55: 
             weatherClass.weatherDescription = "Drizzle";
             weatherClass.gifSuggestion = "drizzle+roker"; //OK
-            document.getElementById("bg-image").style.backgroundImage = "url('https://mdbgo.io/ascensus/mdb-advanced/img/drizzle.gif')";
+            document.getElementById("bg-image").style.backgroundImage = "url('./assets/img/drizzle.gif')";
             break;
         // 56, 57 - Freezing Drizzle: Light and dense intensity
         case 56: case 57:
             weatherClass.weatherDescription = "Freezing drizzle";
             weatherClass.gifSuggestion = "frozen-bubble";
-            document.getElementById("bg-image").style.backgroundImage = "url('https://mdbgo.io/ascensus/mdb-advanced/img/drizzle.gif')";
+            document.getElementById("bg-image").style.backgroundImage = "url('./assets/img/drizzle.gif')";
             break;
         // 61, 63, 65 - Rain: Slight, moderate and heavy intensity
         case 61: case 63:
@@ -132,6 +132,7 @@ function checkWeather(weatherCode) {
         default:
             weatherClass.weatherDescription = "Unknown weather code:" + weatherCode;
             weatherClass.gifSuggestion = "confused+John+Travolta";
+            document.getElementById("bg-image").style.backgroundImage = "url('./assets/img/weather-general.gif')";
             break;
     }
     weatherClassification = weatherClass;
