@@ -154,4 +154,42 @@ console.log(cityGeoCodeURL);
         return txt.toUpperCase();
       });
     }
-  
+  // ====== SHOW CUTE GIF FOR SELECTED DROPDOWN MENU ITEM ===== //
+
+  // for html: Feeling Down? 
+    var dropdown = document.querySelector('.dropdown-menu');
+    var dropdownItems = dropdown.querySelectorAll('.dropdown-item');
+    var gifContainer = document.querySelector('#suggested-gif');
+    // Add an event listener to each dropdown item
+    dropdownItems.forEach(item => {
+      item.addEventListener('click', event => {
+        // Remove any existing GIFs from the gifContainer
+        gifContainer.innerHTML = '';
+        // Get the text of the dropdown item
+        var moodText = event.target.textContent;
+    
+        // Use the Giphy API to search for a GIF based on the mood text
+        var giphyUrl = `https://api.giphy.com/v1/gifs/search?api_key=rLk0z3YIH26Drsmd76tsP86a88T6amG2&q=eyebleach%20${moodText}&limit=20`;
+    
+        fetch(giphyUrl)
+          .then(response => response.json())
+          .then(data => {
+            // Get the URL of the GIF
+            console.log(data.data);
+            var i = [Math.floor(Math.random() * 20)]
+            var gifUrl = data.data[i].images.original.url;
+            console.log(gifUrl);
+            // Create an image element and set its src to the GIF URL
+            var gifImage = document.createElement('img');
+            gifImage.src = gifUrl;
+    
+            // Append the image to the gifContainer
+            var gifContainer = document.querySelector('#suggested-gif');
+            gifContainer.appendChild(gifImage);
+          });
+      });
+    });
+    
+    
+    
+    
