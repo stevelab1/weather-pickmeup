@@ -18,3 +18,13 @@
     background-origin: border-box;
     transition: 0.7s;
   }
+
+  
+ .bg-image {
+  position: relative;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:50%;
+  background-image:url('http://mdbgo.io/ascensus/mdb-advanced/img/rain.gif');
+ } 
