@@ -19,7 +19,7 @@ var longitude = '';
           console.log(`Longitude: ${position.coords.longitude}`);
           longitude = position.coords.longitude;
           // OPEN-METEO API queryURL
-          var queryURL = 'https://api.open-meteo.com/v1/forecast?latitude=' + latitude + '&longitude=' + longitude + '&hourly=temperature_2m,rain&daily=temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,precipitation_hours&current_weather=true&timezone=auto'
+          var queryURL = 'https://api.open-meteo.com/v1/forecast?latitude=' + latitude + '&longitude=' + longitude + '&hourly=temperature_2m,rain&daily=temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,precipitation_hours&current_weather=true&timezone=auto&current_weather=true'
       console.log(queryURL);
         });
       } 
@@ -69,15 +69,16 @@ console.log(cityGeoCodeURL);
       console.log(lat);
       var lon = data.results[0].longitude;
       // Get weather data for city
-      var queryURL = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&hourly=temperature_120m,relativehumidity_2m,windspeed_10m&windspeed_unit=mph`;
+      var queryURL = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&hourly=temperature_120m,relativehumidity_2m,windspeed_10m&windspeed_unit=mph&current_weather=true`;
 
-console.log(queryURL);
+      console.log(queryURL);
       fetch(queryURL)
         .then((response) => response.json())
         .then((data) => {
           var currentTemp = Math.round(data.hourly.temperature_120m[0]);
           var currentHumidity = data.hourly.relativehumidity_2m[0];
-          console.log(currentHumidity);
+          var weatherCode = data.current_weather.weathercode;
+          // console.log(currentHumidity);
 
           var currentWindSpeed = data.hourly.windspeed_10m[0];
           // Display current weather on index.html
@@ -86,8 +87,13 @@ console.log(queryURL);
             $("#temperature").text(currentTemp);
             $("#humidity").text(currentHumidity);
             $("#wind-speed").text(currentWindSpeed);
+
+            //Check weather classification
+            $("#weather-classification").text(checkWeather(weatherCode));
+
           }
           displayCurrentWeather();
+          getGIF();
         });
     });
 }
