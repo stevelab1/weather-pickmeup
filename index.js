@@ -194,6 +194,7 @@ console.log(cityGeoCodeURL);
 const clearHistory = document.getElementById("clear-history-btn");
 clearHistory.addEventListener("click", function () {
   localStorage.clear();
+  location.reload();
 });
     
     
