@@ -4,9 +4,7 @@ var weatherClassification = "";
 function getGIF() {
     // Get GIF related to location weather
     var queryGIFKeyword = weatherClassification.gifSuggestion.trim().toLowerCase();
-    var searchQuery = queryGIFKeyword.trim(); // + "+weather"; // + queryMood.trim();
-
-    console.log(searchQuery);
+    var searchQuery = queryGIFKeyword.trim();
 
     // Putting query together with info collected from user input and location weather informed by the weather API
     var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + API_KEY + "&q=" + searchQuery + "&limit=1&offset=0&rating=g&lang=en";
@@ -34,19 +32,15 @@ function appendGIF(gifURL) { // Clear the div
     $("#suggested-gif").append(image);
 }
 
-// getGIF();
 function checkWeather(weatherCode) {
     var weatherClass = {
         weatherDescription: "",
         gifSuggestion: ""
     };
 
-    // WMO Weather interpretation codes (WW): https://open-meteo.com/en/docs#latitude=0&longitude=0&current_weather=true
-    console.log(weatherCode);
-    // weatherCode = 65;
-    // Code - Description
-
-    switch (weatherCode) {
+   // WMO Weather interpretation codes (WW): https://open-meteo.com/en/docs#latitude=0&longitude=0&current_weather=true
+   // Code - Description
+   switch (weatherCode) {
         // 0 - Clear sky
         case 0: 
             weatherClass.weatherDescription = "Clear sky";
@@ -61,7 +55,7 @@ function checkWeather(weatherCode) {
             break;
         case 2: 
             weatherClass.weatherDescription = "Partly cloudy";
-            weatherClass.gifSuggestion = "sweater+weather"; //OK
+            weatherClass.gifSuggestion = "sweater+weather+pudgy"; //OK
             document.getElementById("bg-image").style.backgroundImage = "url('https://mdbgo.io/ascensus/mdb-advanced/img/clouds.gif')";
             break;
         case 3: 
@@ -84,7 +78,7 @@ function checkWeather(weatherCode) {
         // 56, 57 - Freezing Drizzle: Light and dense intensity
         case 56: case 57:
             weatherClass.weatherDescription = "Freezing drizzle";
-            weatherClass.gifSuggestion = "frozen-bubble";
+            weatherClass.gifSuggestion = "frozen-bubble"; //OK
             document.getElementById("bg-image").style.backgroundImage = "url('./assets/img/drizzle.gif')";
             break;
         // 61, 63, 65 - Rain: Slight, moderate and heavy intensity
@@ -101,37 +95,49 @@ function checkWeather(weatherCode) {
         // 66, 67 - Freezing Rain: Light and heavy intensity
         case 66: case 67: 
             weatherClass.weatherDescription = "Freezing rain";
-            weatherClass.gifSuggestion = "puppy";
+            weatherClass.gifSuggestion = "hot+cocoa"; //OK
+            document.getElementById("bg-image").style.backgroundImage = "url('https://mdbgo.io/ascensus/mdb-advanced/img/rain.gif')";
             break;
         // 71, 73, 75 - Snow fall: Slight, moderate, and heavy intensity
-        case 71:
-            weatherClass.weatherDescription = "Partly cloudy";
-            weatherClass.gifSuggestion = "puppy";
-            break;
-        case 73: 
-            weatherClass.weatherDescription = "Partly cloudy";
-            weatherClass.gifSuggestion = "puppy";
-            break;
-        case 75: 
-            weatherClass.weatherDescription = "Overcast";
-            weatherClass.gifSuggestion = "lightup";
+        case 71: case 73: case 75: 
+            weatherClass.weatherDescription = "Snowing";
+            weatherClass.gifSuggestion = "winter+dayao"; //OK
+            document.getElementById("bg-image").style.backgroundImage = "url('https://mdbgo.io/ascensus/mdb-advanced/img/snow.gif')";
             break;
         // 77 - Snow grains
         case 77: 
-            weatherClass.weatherDescription = "Overcast";
-            weatherClass.gifSuggestion = "lightup";
+            weatherClass.weatherDescription = "Snow grains";
+            weatherClass.gifSuggestion = "rolling+tian"; //OK
+            document.getElementById("bg-image").style.backgroundImage = "url('https://mdbgo.io/ascensus/mdb-advanced/img/snow.gif')";
             break;
         // 80, 81, 82 - Rain showers: Slight, moderate, and violent
-        case 75: 
-            weatherClass.weatherDescription = "Overcast";
-            weatherClass.gifSuggestion = "lightup";
+        case 80: case 81: case 82: 
+            weatherClass.weatherDescription = "Rain showers";
+            weatherClass.gifSuggestion = "summer+sun+shower"; //OK
+            document.getElementById("bg-image").style.backgroundImage = "url('https://mdbgo.io/ascensus/mdb-advanced/img/rain.gif')";
             break;
         // 85, 86 - Snow showers slight and heavy
+        case 85: case 86: 
+            weatherClass.weatherDescription = "Snow showers";
+            weatherClass.gifSuggestion = "snowman+pudgy"; //OK
+            document.getElementById("bg-image").style.backgroundImage = "url('https://mdbgo.io/ascensus/mdb-advanced/img/snow.gif')";
+            break;
         // 95 - Thunderstorm: Slight or moderate
+        case 95: 
+            weatherClass.weatherDescription = "Thunderstorm";
+            weatherClass.gifSuggestion = "Stormy-Weather-family-guy"; //OK
+            document.getElementById("bg-image").style.backgroundImage = "url('https://mdbgo.io/ascensus/mdb-advanced/img/thunderstorm.gif')";
+            break;
         // 96, 99 - Thunderstorm with slight and heavy hail
+        case 96: case 99: 
+            weatherClass.weatherDescription = "Thunderstorm with hail";
+            weatherClass.gifSuggestion = "winter+shelter"; //OK
+            document.getElementById("bg-image").style.backgroundImage = "url('https://mdbgo.io/ascensus/mdb-advanced/img/thunderstorm.gif')";
+            break;        
+        // default (none of the above)
         default:
-            weatherClass.weatherDescription = "Unknown weather code:" + weatherCode;
-            weatherClass.gifSuggestion = "confused+John+Travolta";
+            weatherClass.weatherDescription = "Unknown weather code: " + weatherCode;
+            weatherClass.gifSuggestion = "confused+John+Travolta"; //OK
             document.getElementById("bg-image").style.backgroundImage = "url('./assets/img/weather-general.gif')";
             break;
     }
