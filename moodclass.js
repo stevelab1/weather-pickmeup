@@ -27,9 +27,15 @@ function getGIF() {
 function appendGIF(gifURL) { // Clear the div
     $("#suggested-gif").empty();
     // Creating an element to hold the gif
-    var image = $("<img src=" + gifURL + ">");
+    var image = $("<img id='gifID' src=" + gifURL + " >");
     // Appending the image
     $("#suggested-gif").append(image);
+
+    //Fix image size so that regardless of gif size on origin they're all displayed consistently
+    var theImg = document.getElementById('gifID');
+    theImg.style.display = "cover";
+    theImg.style.width = "20rem";
+    theImg.style.height = "15.8rem";
 }
 
 function checkWeather(weatherCode) {
@@ -55,7 +61,7 @@ function checkWeather(weatherCode) {
             break;
         case 2: 
             weatherClass.weatherDescription = "Partly cloudy";
-            weatherClass.gifSuggestion = "sweater+weather+pudgy"; //OK
+            weatherClass.gifSuggestion = "sweater+weather"; //OK
             document.getElementById("bg-image").style.backgroundImage = "url('https://mdbgo.io/ascensus/mdb-advanced/img/clouds.gif')";
             break;
         case 3: 
