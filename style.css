@@ -36,3 +36,27 @@ border: solid 1px #fff;
 }
 
 #more a:focus { outline: thin dotted; }
+
+#clear-history-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 30px;
+  width: 100%;
+  border-radius: 6px;
+  border: none;
+  margin-bottom: 10px;
+  color: #fff;
+  background: #9fa6ac;
+  background-origin: border-box;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#clear-history-btn:hover {
+  background: #7d8286;
+  background-origin: border-box;
+  transition: 0.7s;
+}
+
