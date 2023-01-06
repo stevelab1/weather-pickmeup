@@ -109,8 +109,21 @@
                         </button>
                     </p>
                     <div class="collapse" id="collapseExample">
-                        <div class="card card-body clear">
-                            Weather detail.
+                        <div class="card-body clear">
+                            <div id="current-weather" class="weather-conditions">
+                                <div>Detailed Weather:
+                                    <span id="weather-classification"></span>
+                                </div>
+                                <div>Temperature:
+                                    <span id="temperature"></span>&#176C
+                                </div>
+                                <div>Wind-speed:
+                                    <span id="wind-speed"></span>mph
+                                </div>
+                                <div>Humidity:
+                                    <span id="humidity"></span>%
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -118,7 +131,7 @@
         </div>
         </div>
         <!-- Giphy place-->
-        <div class="text-center m-4 p-4 col">
+        <div class="text-center m-4 p-4  col col-md-6">
             <div class="card text-center">
                 <header class="card-header text-center">
                     <div>Pick-me-up</div>
