@@ -24,3 +24,15 @@ background-repeat: no-repeat;
 background-size: cover;
 background-position:50%;
 } 
+
+.clear {
+  background-color: transparent;
+} 
+
+#more {
+color: #fff;
+border: solid 1px #fff;
+
+}
+
+#more a:focus { outline: thin dotted; }

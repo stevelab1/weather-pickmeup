@@ -13,8 +13,9 @@ About weather-pickmeup. What it is and who it is for?
 - Pulls in weather from the OpenMeteo API
 - User search for weather in their location pulls up current weather and a giphy to cheer them up if the weather is bad or... if not
 
-### Screenshots
+### Screenshot 2023-01-06
 
+![Screenshot-2023-01-06](Screenshot-2023-01-06.png)
 
 ### Initial wireframe
 

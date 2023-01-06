@@ -13,6 +13,7 @@ test2.js
 test3.js
 teststyle.css
 teststyle2.css
+weathertest.html
 
 # ignore all files starting with . or ~
 .*
