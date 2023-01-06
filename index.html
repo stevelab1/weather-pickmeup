@@ -67,86 +67,103 @@
                 <button class="dropdown-item" type="button" id="mood-1">Just show me cute cats :(</button>
             </div>
         </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
 
-        <!-- Selected city's current weather -->
-        <div class="text-center m-4 p-4 col col-md-6">
-            <div id="bg-image" class="card text-white shadow-4-strong"
-                style="background-image: url('./assets/img/clouds.gif')">
-                <header class="card-header text-center">
-                    <div id="city-name-display" class="text">
-                        Enter a location</div>
-                </header>
-                <div id="current-weather" class="card-body">
+                    <!-- Selected city's current weather -->
+                    <div class="text-center m-4 pt-4">
+                        <div id="bg-image" class="card text-white shadow-4-strong"
+                            style="background-image: url('./assets/img/clouds.gif')">
+                            <header class="card-header text-center">
+                                <div id="city-name-display" class="text">
+                                    Enter a location</div>
+                            </header>
+                            <div id="current-weather" class="card-body">
 
-                    <!-- Time & date from script js -->
-                    <div class="date-time">
-                        <div id="current-date"></div>
-                        <div id="current-time"></div>
-                    </div>
-                    <div class="weather-conditions">
-                        <span id="weather-icon"></span>
-                        <div>Weather:
-                            <span id="weather-classification"></span>
-                        </div>
-                        <div>Temperature:
-                            <span id="temperature"></span>&#176C
-                        </div>
-                        <div>Wind-speed:
-                            <span id="wind-speed"></span>mph
-                        </div>
-                        <div>Humidity:
-                            <span id="humidity"></span>%
-                        </div>
-                    </div>
-
-                    <hr />
-                    <p>
-
-                        </a>
-                        <button id="more" class="btn btn-outline" type="button" data-toggle="collapse"
-                            data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                            More
-                        </button>
-                    </p>
-                    <div class="collapse" id="collapseExample">
-                        <div class="card-body clear">
-                            <div id="current-weather" class="weather-conditions">
-                                <div>Detailed Weather:
-                                    <span id="weather-classification"></span>
+                                <!-- Time & date from script js -->
+                                <div class="date-time">
+                                    <div id="current-date"></div>
+                                    <div id="current-time"></div>
                                 </div>
-                                <div>Temperature:
-                                    <span id="temperature"></span>&#176C
+                                <div class="weather-conditions">
+                                    <span id="weather-icon"></span>
+                                    <div>Weather:
+                                        <span id="weather-classification"></span>
+                                    </div>
+                                    <div>Temperature:
+                                        <span id="temperature"></span>&#176C
+                                    </div>
+                                    <div>Precipitation:
+                                        <span id="precipitation"></span>unit tbd
+                                    </div>
+                                    <div>Humidity:
+                                        <span id="humidity"></span>%
+                                    </div>
+                                    <div>Wind-speed:
+                                        <span id="wind-speed"></span>mph
+                                    </div>
+                                    <div>Sunrise:
+                                        <span id="sunrise"></span>am
+                                    </div>
+                                    <div>Sunset:
+                                        <span id="sunset"></span>pm
+                                    </div>
                                 </div>
-                                <div>Wind-speed:
-                                    <span id="wind-speed"></span>mph
-                                </div>
-                                <div>Humidity:
-                                    <span id="humidity"></span>%
+
+                                <hr />
+                                <p>
+
+                                    </a>
+                                    <button id="more" class="btn btn-outline" type="button" data-toggle="collapse"
+                                        data-target="#collapseExample" aria-expanded="false"
+                                        aria-controls="collapseExample">
+                                        More
+                                    </button>
+                                </p>
+                                <div class="collapse" id="collapseExample">
+                                    <div class="card-body clear">
+                                        <div id="current-weather" class="weather-conditions">
+                                            <div>Detailed Weather:
+                                                <span id="weather-classification"></span>
+                                            </div>
+                                            <div>Temperature:
+                                                <span id="temperature"></span>&#176C
+                                            </div>
+                                            <div>Wind-speed:
+                                                <span id="wind-speed"></span>mph
+                                            </div>
+                                            <div>Humidity:
+                                                <span id="humidity"></span>%
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        </div>
-        <!-- Giphy place-->
-        <div class="text-center m-4 p-4  col col-md-6">
-            <div class="card text-center">
-                <header class="card-header text-center">
-                    <div>Pick-me-up</div>
-                </header>
-                <div id="suggested-gif" class="card-body"></div>
-            </div>
-        </div>
+                <!-- Giphy place-->
+                <div class="col col-lg-6 col-md-6 col-sm-12">
 
-        <!-- Display searched cities -->
-        <div class="card m-4 p-4">
-            <div class="search-history">
-                <h5>Recent searches:</h5>
-                <div id="recent-search"></div>
+                    <div class="text-center m-4 pt-4">
+                        <div class="card text-center">
+                            <header class="card-header text-center">
+                                <div>Pick-me-up</div>
+                            </header>
+                            <div id="suggested-gif" class="card-body"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+
+            <!-- Display searched cities -->
+            <div class="card m-4 p-4">
+                <div class="search-history">
+                    <h5>Recent searches:</h5>
+                    <div id="recent-search"></div>
+                </div>
+            </div>
     </main>
 
     <!-- Footer -->
