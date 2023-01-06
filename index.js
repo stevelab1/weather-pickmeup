@@ -190,10 +190,11 @@ console.log(cityGeoCodeURL);
       });
     });
     
-    // Button to clear local storage.
+    // Button to clear local storage and reload page
 const clearHistory = document.getElementById("clear-history-btn");
 clearHistory.addEventListener("click", function () {
   localStorage.clear();
+  location.reload();
 });
     
     
