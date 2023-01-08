@@ -66,7 +66,7 @@ console.log(cityGeoCodeURL);
     .then((response) => response.json())
     .then((data) => {
       var lat = data.results[0].latitude;
-      console.log(lat);
+      //console.log(lat);
       var lon = data.results[0].longitude;
       // Get weather data for city
       var queryURL = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&hourly=temperature_2m,relativehumidity_2m,apparent_temperature,precipitation,snow_depth,cloudcover,visibility,windspeed_10m,windspeed_80m,windspeed_120m,windspeed_180m,winddirection_10m,winddirection_80m,winddirection_120m,winddirection_180m,windgusts_10m,temperature_80m,temperature_120m,temperature_180m&daily=temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_hours&current_weather=true&windspeed_unit=mph&precipitation_unit=inch&timezone=auto`;
