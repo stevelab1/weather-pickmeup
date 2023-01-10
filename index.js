@@ -1,30 +1,3 @@
-// // Shannon - Script for geolocation button
-// var latitude = '';
-// var longitude = '';
-
-//   // Get a reference to the button and the city name container
-//   const geoButton = document.getElementById('fetch-location-button');
-//   const cityNameContainer = document.getElementById('city-name');
-
-//   // Add an event listener to the button that will execute the code inside the function when the button is clicked
-//   geoButton.addEventListener('click', () => {
-//     // Check if the browser supports the geolocation API
-//     if ('geolocation' in navigator) {
-//         // Get the user's location
-//         navigator.geolocation.getCurrentPosition((position) => {
-//           // Log the user's latitude and longitude to the console
-          
-//           console.log(`Latitude: ${position.coords.latitude}`);
-//           latitude = position.coords.latitude
-//           console.log(`Longitude: ${position.coords.longitude}`);
-//           longitude = position.coords.longitude;
-//           // OPEN-METEO API queryURL
-//           var queryURL = 'https://api.open-meteo.com/v1/forecast?latitude=' + latitude + '&longitude=' + longitude + '&hourly=temperature_2m,rain&daily=temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,precipitation_hours&current_weather=true&timezone=auto&current_weather=true'
-//       console.log(queryURL);
-//         });
-//       } 
-//     });
-
 // STEPHEN's Code
 // Assign HTML Elements to variables
 var searchBtn = document.querySelector("#search-button");
@@ -61,7 +34,7 @@ userInput.addEventListener("keyup", (event) => {
 function searchCity(city) {
   // Get city geodata — latitude & longitude
   var cityGeoCodeURL = `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1`;
-console.log(cityGeoCodeURL);
+  console.log(cityGeoCodeURL);
   fetch(cityGeoCodeURL)
     .then((response) => response.json())
     .then((data) => {
@@ -88,9 +61,48 @@ console.log(cityGeoCodeURL);
             $("#humidity").text(currentHumidity);
             $("#wind-speed").text(currentWindSpeed);
 
+            $("#temperature_2m").text(data.hourly.temperature_2m[0]);
+
+            $("#relativehumidity_2m").text(data.hourly.relativehumidity_2m[0]);
+
+            $("#apparent_temperature").text(
+              data.hourly.apparent_temperature[0]
+            );
+
+            $("#precipitation").text(data.hourly.precipitation[0]);
+
+            $("#snow_depth").text(data.hourly.snow_depth[0]);
+
+            $("#cloudcover").text(data.hourly.cloudcover[0]);
+
+            $("#visibility").text(data.hourly.visibility[0]);
+
+            $("#windspeed_10m").text(data.hourly.windspeed_10m[0]);
+            $("#windspeed_80m").text(data.hourly.windspeed_80m[0]);
+            $("#windspeed_120m").text(data.hourly.windspeed_120m[0]);
+            $("#windspeed_180m").text(data.hourly.windspeed_180m[0]);
+
+            $("#winddirection_10m").text(data.hourly.winddirection_10m[0]);
+            $("#winddirection_80m").text(data.hourly.winddirection_80m[0]);
+            $("#winddirection_120m").text(data.hourly.winddirection_120m[0]);
+            $("#winddirection_180m").text(data.hourly.winddirection_180m[0]);
+
+            $("#windgusts_10m").text(data.hourly.windgusts_10m[0]);
+
+            $("#temperature_80m").text(data.hourly.temperature_80m[0]);
+            $("#temperature_120m").text(data.hourly.temperature_120m[0]);
+            $("#temperature_180m").text(data.hourly.temperature_180m[0]);
+
+            $("#temperature_2m_max").text(data.daily.temperature_2m_max[0]);
+            $("#temperature_2m_min").text(data.daily.temperature_2m_min[0]);
+
+            $("#sunrise").text(data.daily.sunrise[0]);
+            $("#sunset").text(data.daily.sunset[0]);
+
+            $("#precipitation_hours").text(data.daily.precipitation_hours[0]);
+
             //Check weather classification
             $("#weather-classification").text(checkWeather(weatherCode));
-
           }
           displayCurrentWeather();
           getGIF();
@@ -98,103 +110,101 @@ console.log(cityGeoCodeURL);
     });
 }
 
-    // Get city geodata — latitude & longitude
-    function getCityGeo(city) {
-        var cityGeoCodeURL = `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1`;
-      
-        fetch(cityGeoCodeURL)
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (data) {
-          var lat = data.results[0].latitude;
-          var lon = data.results[0].longitude;
-        });
-      }
-      
-      // Save searched inputs. Display under search form
-      function saveRecentSearch(city) {
-          var cityTitleCase = toTitleCase(city);
-          // User input check
-          if (city === "") {
-            alert("Please enter a location");
-            return;
-          }
-        
-          if (!cityArrStored.includes(cityTitleCase)) {
-        cityArrStored.push(cityTitleCase);
-        if (cityArrStored.length > 8) {
-          cityArrStored.shift();
-        }
-      }
-    
-      localStorage.setItem("cities", JSON.stringify(cityArrStored));
-      updateRecentSearch();
-    }
-    
-    // Update recent search list
-    function updateRecentSearch() {
-      recentSearch.innerHTML = "";
-      cityArrStored.forEach(function (city) {
-        var btn = document.createElement("button");
-        btn.textContent = city;
-        btn.classList.add("city-names");
-        btn.addEventListener("click", function () {
-          searchCity(city);
-        });
-        recentSearch.appendChild(btn);
-      });
-    }
-    
-    updateRecentSearch();
-    
-    // Title case function for city name display
-    function toTitleCase(str) {
-      return str.replace(/\b\w/g, function (txt) {
-        return txt.toUpperCase();
-      });
-    }
-  // ====== SHOW CUTE GIF FOR SELECTED DROPDOWN MENU ITEM ===== //
+// Get city geodata — latitude & longitude
+function getCityGeo(city) {
+  var cityGeoCodeURL = `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1`;
 
-  // for html: Feeling Down? 
-    var dropdown = document.querySelector('.dropdown-menu');
-    var dropdownItems = dropdown.querySelectorAll('.dropdown-item');
-    var gifContainer = document.querySelector('#suggested-gif');
-    // Add an event listener to each dropdown item
-    dropdownItems.forEach(item => {
-      item.addEventListener('click', event => {
-        // Remove any existing GIFs from the gifContainer
-        gifContainer.innerHTML = '';
-        // Get the text of the dropdown item
-        var moodText = event.target.textContent;
-    
-        // Use the Giphy API to search for a GIF based on the mood text
-        var giphyUrl = `https://api.giphy.com/v1/gifs/search?api_key=rLk0z3YIH26Drsmd76tsP86a88T6amG2&q=eyebleach%20${moodText}&limit=20`;
-    
-        fetch(giphyUrl)
-          .then(response => response.json())
-          .then(data => {
-            // Get the URL of the GIF
-            console.log(data.data);
-            var i = [Math.floor(Math.random() * 20)]
-            var gifUrl = data.data[i].images.original.url;
-            console.log(gifUrl);
-            // Create an image element and set its src to the GIF URL
-            var gifImage = document.createElement('img');
-            gifImage.src = gifUrl;
-    
-            // Append the image to the gifContainer
-            var gifContainer = document.querySelector('#suggested-gif');
-            gifContainer.appendChild(gifImage);
-          });
-      });
+  fetch(cityGeoCodeURL)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      var lat = data.results[0].latitude;
+      var lon = data.results[0].longitude;
     });
-    
-    // Button to clear local storage and reload page
+}
+
+// Save searched inputs. Display under search form
+function saveRecentSearch(city) {
+  var cityTitleCase = toTitleCase(city);
+  // User input check
+  if (city === "") {
+    alert("Please enter a location");
+    return;
+  }
+
+  if (!cityArrStored.includes(cityTitleCase)) {
+    cityArrStored.push(cityTitleCase);
+    if (cityArrStored.length > 8) {
+      cityArrStored.shift();
+    }
+  }
+
+  localStorage.setItem("cities", JSON.stringify(cityArrStored));
+  updateRecentSearch();
+}
+
+// Update recent search list
+function updateRecentSearch() {
+  recentSearch.innerHTML = "";
+  cityArrStored.forEach(function (city) {
+    var btn = document.createElement("button");
+    btn.textContent = city;
+    btn.classList.add("city-names");
+    btn.addEventListener("click", function () {
+      searchCity(city);
+    });
+    recentSearch.appendChild(btn);
+  });
+}
+
+updateRecentSearch();
+
+// Title case function for city name display
+function toTitleCase(str) {
+  return str.replace(/\b\w/g, function (txt) {
+    return txt.toUpperCase();
+  });
+}
+// ====== SHOW CUTE GIF FOR SELECTED DROPDOWN MENU ITEM ===== //
+
+// for html: Feeling Down?
+var dropdown = document.querySelector(".dropdown-menu");
+var dropdownItems = dropdown.querySelectorAll(".dropdown-item");
+var gifContainer = document.querySelector("#suggested-gif");
+// Add an event listener to each dropdown item
+dropdownItems.forEach((item) => {
+  item.addEventListener("click", (event) => {
+    // Remove any existing GIFs from the gifContainer
+    gifContainer.innerHTML = "";
+    // Get the text of the dropdown item
+    var moodText = event.target.textContent;
+
+    // Use the Giphy API to search for a GIF based on the mood text
+    var giphyUrl = `https://api.giphy.com/v1/gifs/search?api_key=rLk0z3YIH26Drsmd76tsP86a88T6amG2&q=eyebleach%20${moodText}&limit=20`;
+
+    fetch(giphyUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        // Get the URL of the GIF
+        console.log(data.data);
+        var i = [Math.floor(Math.random() * 20)];
+        var gifUrl = data.data[i].images.original.url;
+        console.log(gifUrl);
+        // Create an image element and set its src to the GIF URL
+        var gifImage = document.createElement("img");
+        gifImage.src = gifUrl;
+
+        // Append the image to the gifContainer
+        var gifContainer = document.querySelector("#suggested-gif");
+        gifContainer.appendChild(gifImage);
+      });
+  });
+});
+
+// Button to clear local storage and reload page
 const clearHistory = document.getElementById("clear-history-btn");
 clearHistory.addEventListener("click", function () {
   localStorage.clear();
   location.reload();
 });
-    
-    
