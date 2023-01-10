@@ -107,7 +107,7 @@ function checkWeather(weatherCode) {
         // 71, 73, 75 - Snow fall: Slight, moderate, and heavy intensity
         case 71: case 73: case 75: 
             weatherClass.weatherDescription = "Snowing";
-            weatherClass.gifSuggestion = "winter+dayao"; //OK
+            weatherClass.gifSuggestion = "winter+coffee+dayao"; //OK
             document.getElementById("bg-image").style.backgroundImage = "url('https://mdbgo.io/ascensus/mdb-advanced/img/snow.gif')";
             break;
         // 77 - Snow grains
