@@ -1,29 +1,29 @@
-// Shannon - Script for geolocation button
-var latitude = '';
-var longitude = '';
+// // Shannon - Script for geolocation button
+// var latitude = '';
+// var longitude = '';
 
-  // Get a reference to the button and the city name container
-  const geoButton = document.getElementById('fetch-location-button');
-  const cityNameContainer = document.getElementById('city-name');
+//   // Get a reference to the button and the city name container
+//   const geoButton = document.getElementById('fetch-location-button');
+//   const cityNameContainer = document.getElementById('city-name');
 
-  // Add an event listener to the button that will execute the code inside the function when the button is clicked
-  geoButton.addEventListener('click', () => {
-    // Check if the browser supports the geolocation API
-    if ('geolocation' in navigator) {
-        // Get the user's location
-        navigator.geolocation.getCurrentPosition((position) => {
-          // Log the user's latitude and longitude to the console
+//   // Add an event listener to the button that will execute the code inside the function when the button is clicked
+//   geoButton.addEventListener('click', () => {
+//     // Check if the browser supports the geolocation API
+//     if ('geolocation' in navigator) {
+//         // Get the user's location
+//         navigator.geolocation.getCurrentPosition((position) => {
+//           // Log the user's latitude and longitude to the console
           
-          console.log(`Latitude: ${position.coords.latitude}`);
-          latitude = position.coords.latitude
-          console.log(`Longitude: ${position.coords.longitude}`);
-          longitude = position.coords.longitude;
-          // OPEN-METEO API queryURL
-          var queryURL = 'https://api.open-meteo.com/v1/forecast?latitude=' + latitude + '&longitude=' + longitude + '&hourly=temperature_2m,rain&daily=temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,precipitation_hours&current_weather=true&timezone=auto&current_weather=true'
-      console.log(queryURL);
-        });
-      } 
-    });
+//           console.log(`Latitude: ${position.coords.latitude}`);
+//           latitude = position.coords.latitude
+//           console.log(`Longitude: ${position.coords.longitude}`);
+//           longitude = position.coords.longitude;
+//           // OPEN-METEO API queryURL
+//           var queryURL = 'https://api.open-meteo.com/v1/forecast?latitude=' + latitude + '&longitude=' + longitude + '&hourly=temperature_2m,rain&daily=temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,precipitation_hours&current_weather=true&timezone=auto&current_weather=true'
+//       console.log(queryURL);
+//         });
+//       } 
+//     });
 
 // STEPHEN's Code
 // Assign HTML Elements to variables

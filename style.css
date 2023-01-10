@@ -32,10 +32,19 @@ background-position:50%;
 #more {
 color: #fff;
 border: solid 1px #fff;
-
 }
 
 #more a:focus { outline: thin dotted; }
+
+#search-form {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+#search-button {
+  margin-left: 1rem;
+}
 
 #clear-history-btn {
   display: flex;
@@ -66,7 +75,7 @@ border: solid 1px #fff;
 .perspective-text {
   color: white;
   font-family: Arial;
-  font-size: 60px;
+  font-size: 30px;
   font-weight: 900;
   letter-spacing: -2px;
   text-transform: uppercase;  
@@ -86,11 +95,11 @@ p {
 }
 
 .perspective-line:nth-child(odd) {
-  transform: skew(60deg, -0deg) scaleY(0.667);
+  transform: skew(60deg, -5deg) scaleY(0.667);
 }
 
 .perspective-line:nth-child(even) {
-  transform: skew(0deg, -0deg) scaleY(1.337);
+  transform: skew(0deg, -5deg) scaleY(1.337);
 }
 
 .perspective-text:hover p {
@@ -119,4 +128,21 @@ p {
 .perspective-line:nth-child(5) {
   left: 145px;
 }
-/* END PLAYGROUND */
+
+@media (min-width: 600px) {
+  .perspective-text {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 900px) {
+  .perspective-text {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .perspective-text {
+    font-size: 60px;
+  }
+}
