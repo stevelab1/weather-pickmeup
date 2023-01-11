@@ -26,12 +26,6 @@
     <!-- Jumbotron -->
     <div class="jumbotron jumbotron-fluid text-center bg-dark">
         <div class="container">
-            <!-- <h1 class="display-4 text-white">Weather Pick-Me-Up</h1>
-            <blockquote class="blockquote">
-                <p class="mb-0 text-white">If you want to see the sunshine, you have to weather the storm.</p>
-                <footer class="blockquote-footer text-white">Frank Lane</footer>
-            </blockquote> -->
-            <!-- PLAYGROUND -->
             <div class="perspective-text">
                 <div class="perspective-line">
                     <p></p>
@@ -54,17 +48,24 @@
                     <p></p>
                 </div>
             </div>
-            <!-- END PLAYGROUND -->
         </div>
     </div>
     <main>
+
+        <!-- Dark mode Toggler -->
+        
+        <h5>Dark Mode:</h5>
+        <label class="switch">
+            <input type="checkbox" id="dark-mode-switch">
+            <span class="slider round"></span>
+          </label>
+        <!-- Welcome text -->
         <h1 class="text-center">Hello, friend!</h1>
         <h2 id="form-heading" class="mt-1 form-label text-center">
             Search for a location:
         </h2>
 
         <!-- SEARCH AREA -->
-        <!-- Replaced 'form' with 'div' to address a bug when user enters a previously searched location -->
         <div id="search-form" class="text-center">
             <!-- SEARCH FIELD -->
             <input id="user-search-input" type="text" placeholder="Enter a location"
@@ -74,11 +75,6 @@
             <button id="search-button" class="d-grid gap-2 btn btn-primary btn-lg" type="button">
                 Search
             </button>
-
-            <!-- GEOLOCATE BUTTON -->
-            <!-- <button id="fetch-location-button" class="d-grid gap-2 btn btn-primary btn-lg" type="button">Fetch
-                my location</button>
-            <div id="city-name"></div> -->
         </div>
         <br />
         <div class="dropdown text-center">
@@ -117,10 +113,6 @@
                                     <div id="current-time"></div>
                                 </div>
                                 <div class="weather-conditions">
-                                    <!-- <span id="weather-icon"></span>
-                                    <div>Weather:
-                                        <span id="weather-classification"></span>
-                                    </div> -->
                                     <div><i class="fas fa-thermometer-half"></i> Temperature: <span
                                             id="temperature"></span>&#176C (feels like
                                         <span id="apparent_temperature"></span>&#176C)
@@ -154,8 +146,6 @@
                                 <div class="collapse" id="collapseExample">
                                     <div class="card-body clear">
                                         <div id="current-weather" class="weather-conditions">
-                                            <!-- <div>Detailed Weather:</div> -->
-
                                             <div><i class="fas fa-thermometer-half"></i> Temperature 2m: <span
                                                     id="temperature_2m"></span>&#176C</div>
                                             <div><i class="fas fa-thermometer-half"></i> Temperature 80m: <span
@@ -215,10 +205,10 @@
                 <!-- Giphy place-->
                     <div class="text-center mt-4 pt-4">
                         <div id="bg-title-gif" class="card border-0 text-white shadow-4-strong" style="background-image: url('./assets/img/clouds.gif')">
-                            <!-- <header class="card-header text-center">
-                                <div>Pick-me-up</div>
-                            </header> -->
-                            <div id="suggested-gif" class="card-body"></div>
+                            <header class="card-header gif-header text-center">
+                                <p>GIF ME</p>
+                            </header>
+                            <div id="suggested-gif" class="card-body"><img src="https://media.giphy.com/media/jsm7XMcyeTFJE4vHzO/giphy.gif" id="placeholder-gif" alt="placeholder-gif"></div>
                         </div>
                     </div>
                 </div>

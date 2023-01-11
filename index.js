@@ -196,8 +196,19 @@ dropdownItems.forEach((item) => {
 });
 
 // Button to clear local storage and reload page
-const clearHistory = document.getElementById("clear-history-btn");
+var clearHistory = document.getElementById("clear-history-btn");
 clearHistory.addEventListener("click", function () {
   localStorage.clear();
   location.reload();
+});
+
+// Dark Mode Toggler
+var darkModeSwitch = document.getElementById("dark-mode-switch");
+
+darkModeSwitch.addEventListener("change", (e) => {
+  if (e.target.checked) {
+    document.body.classList.add("dark-mode");
+  } else {
+    document.body.classList.remove("dark-mode");
+  }
 });
