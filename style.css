@@ -1,14 +1,14 @@
 .city-names {
-align-items: center;
-padding: 6px 30px;
-border-radius: 6px;
-border: none;
-margin: 10px;
-color: #fff;
-background: #007bff;
-background-origin: border-box;
-user-select: none;
--webkit-user-select: none; touch-action: manipulation;
+  align-items: center;
+  padding: 6px 30px;
+  border-radius: 6px;
+  border: none;
+  margin: 10px;
+  color: #fff;
+  background: #007bff;
+  background-origin: border-box;
+  user-select: none;
+  -webkit-user-select: none; touch-action: manipulation;
 }
   
 .city-names:hover {
@@ -18,20 +18,26 @@ user-select: none;
 }
 
 #bg-image {
-position: relative;
-overflow: hidden;
-background-repeat: no-repeat;
-background-size: cover;
-background-position:50%;
+  position: relative;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:50%;
 } 
 
-.clear {
+/* .clear {
   background-color: transparent;
-} 
+}  */
+
+.weather-conditions div {
+  background-color: #00000022;
+  padding: 1rem 0;
+}
 
 #more {
-color: #fff;
-border: solid 1px #fff;
+  color: #fff;
+  border: solid 1px #fff;
+  background-color: #00000022;
 }
 
 #more a:focus { outline: thin dotted; }
@@ -144,5 +150,48 @@ p {
 @media (min-width: 1200px) {
   .perspective-text {
     font-size: 60px;
+  }
+}
+
+
+/* weather card title */
+
+.title-text-weather {
+  color: white;
+  font-family: Arial;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;  
+}
+
+.title-line-weather {
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+}
+
+.title-line-weather p .slide {
+  margin: 0;
+  height: 50px;
+  line-height: 50px;
+  transition: all 0.8s slider;
+}
+
+.title-line-weather:nth-child(odd) {
+  transform: skew(-7deg);
+}
+
+.title-line-weather:nth-child(even) {
+  transform: skew(-7deg);
+}
+
+.title-text-weather:hover .slide {
+  transform: translate(-82px, -50px);
+}
+
+@media (min-width: 1200px) {
+  .title-text-weather {
+    font-size: 50px;
   }
 }

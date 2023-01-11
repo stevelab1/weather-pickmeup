@@ -96,15 +96,22 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
 
                     <!-- Selected city's current weather -->
-                    <div class="text-center m-4 pt-4">
+                    <div class="text-center mt-4 pt-4">
                         <div id="bg-image" class="card text-white shadow-4-strong"
                             style="background-image: url('./assets/img/clouds.gif')">
                             <header class="card-header text-center">
-                                <div id="city-name-display" class="text">
-                                    Enter a location</div>
+                                <div class="title-text-weather">
+                                    <div class="title-line-weather">
+                                        <p class="slide" id="city-name-display">
+                                            Enter location</p>
+                                        <p class="slide" id="weather-classification">Weather</p>
+                                    </div>
+                                </div>
+
+
                             </header>
                             <div id="current-weather" class="card-body">
 
@@ -114,68 +121,83 @@
                                     <div id="current-time"></div>
                                 </div>
                                 <div class="weather-conditions">
-                                    <span id="weather-icon"></span>
+                                    <!-- <span id="weather-icon"></span>
                                     <div>Weather:
                                         <span id="weather-classification"></span>
-                                    </div>
+                                    </div> -->
                                     <div><i class="fas fa-thermometer-half"></i> Temperature: <span
-                                            id="temperature"></span>&#176C</div>
-
-                                    <div>Precipitation:
-                                        <span id="precipitation"></span>unit tbd
+                                            id="temperature"></span>&#176C (feels like
+                                        <span id="apparent_temperature"></span>&#176C)
                                     </div>
-                                    <div>Humidity:
+
+                                    <div><i class="fas fa-cloud-rain"></i> Precipitation: <span
+                                            id="precipitation"></span> in</div>
+                                    <div><i class="fas fa-tint"></i> Humidity:
                                         <span id="humidity"></span>%
                                     </div>
-                                    <div>Wind-speed:
-                                        <span id="wind-speed"></span>mph
+                                    <div><i class="fas fa-wind"></i> Wind-speed:
+                                        <span id="wind-speed"></span> mph
                                     </div>
-                                    <div>Sunrise:
-                                        <span id="sunrise"></span>am
-                                    </div>
-                                    <div>Sunset:
-                                        <span id="sunset"></span>pm
-                                    </div>
+
+                                    <div><i class="fas fa-sun"></i> Sunrise: <span id="sunrise"></span> am</div>
+                                    <div><i class="fas fa-sun"></i> Sunset: <span id="sunset"></span> pm</div>
+
+
                                 </div>
 
                                 <hr />
                                 <p>
 
                                     </a>
-                                    <button id="more" class="btn btn-outline" type="button" data-toggle="collapse"
-                                        data-target="#collapseExample" aria-expanded="false"
+                                    <button id="more" class="btn btn-outline weather-conditions" type="button"
+                                        data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
                                         aria-controls="collapseExample">
-                                        More
+                                        Detailed Weather
                                     </button>
                                 </p>
                                 <div class="collapse" id="collapseExample">
                                     <div class="card-body clear">
                                         <div id="current-weather" class="weather-conditions">
-                                            <div>Detailed Weather:</div>
+                                            <!-- <div>Detailed Weather:</div> -->
 
                                             <div><i class="fas fa-thermometer-half"></i> Temperature 2m: <span
                                                     id="temperature_2m"></span>&#176C</div>
-                                            <div><i class="fas fa-tint"></i> Relative Humidity 2m: <span
-                                                    id="relativehumidity_2m"></span>%</div>
-                                            <div><i class="fas fa-thermometer-three-quarters"></i> Apparent Temperature:
-                                                <span id="apparent_temperature"></span>&#176C
+                                            <div><i class="fas fa-thermometer-half"></i> Temperature 80m: <span
+                                                    id="temperature_80m"></span>&#176C</div>
+                                            <div><i class="fas fa-thermometer-half"></i> Temperature 120m: <span
+                                                    id="temperature_120m"></span>&#176C</div>
+                                            <div><i class="fas fa-thermometer-half"></i> Temperature 180m: <span
+                                                    id="temperature_180m"></span>&#176C</div>
+
+                                            <hr>
+                                            <div><i class="fas fa-thermometer-empty"></i> Min Temp Today: <span
+                                                    id="temperature_2m_min"></span>&#176C</div>
+                                            <div><i class="fas fa-thermometer-full"></i> Max Temp Today: <span
+                                                    id="temperature_2m_max"></span>&#176C</div>
+                                            <hr>
+                                            <!-- <div><i class="fas fa-tint"></i> Relative Humidity 2m: <span
+                                                    id="relativehumidity_2m"></span>%</div> -->
+                                            <div><i class="fas fa-cloud-sun-rain"></i> Precipitation Today: <span
+                                                    id="precipitation_hours"></span> hour(s)</div>
+                                            <div><i class="fas fa-snowflake"></i> Snow: <span id="snow_depth"></span> in
                                             </div>
-                                            <div><i class="fas fa-cloud-rain"></i> Precipitation: <span
-                                                    id="precipitation"></span>inch</div>
-                                            <div><i class="fas fa-snowflake"></i> Snow Depth: <span
-                                                    id="snow_depth"></span>inch</div>
+                                            <hr>
                                             <div><i class="fas fa-cloud"></i> Cloud Cover: <span
                                                     id="cloudcover"></span>%</div>
-                                            <div><i class="fas fa-eye"></i> Visibility: <span
-                                                    id="visibility"></span>mile(s)</div>
+                                            <!-- <div><i class="fas fa-eye"></i> Visibility: <span
+                                                    id="visibility"></span>mile(s)</div> -->
+                                            <hr>
                                             <div><i class="fas fa-wind"></i> Wind Speed 10m: <span
-                                                    id="windspeed_10m"></span>mph</div>
+                                                    id="windspeed_10m"></span> mph</div>
                                             <div><i class="fas fa-wind"></i> Wind Speed 80m: <span
-                                                    id="windspeed_80m"></span>mph</div>
+                                                    id="windspeed_80m"></span> mph</div>
                                             <div><i class="fas fa-wind"></i> Wind Speed 120m: <span
-                                                    id="windspeed_120m"></span>mph</div>
+                                                    id="windspeed_120m"></span> mph</div>
                                             <div><i class="fas fa-wind"></i> Wind Speed 180m: <span
-                                                    id="windspeed_180m"></span>mph</div>
+                                                    id="windspeed_180m"></span> mph</div>
+                                            <div><i class="fas fa-wind"></i> Wind Gusts 10m: <span
+                                                    id="windgusts_10m"></span> mph</div>
+                                            <hr>
                                             <div><i class="fas fa-compass"></i> Wind Direction 10m: <span
                                                     id="winddirection_10m"></span>&#176</div>
                                             <div><i class="fas fa-compass"></i> Wind Direction 80m: <span
@@ -184,22 +206,7 @@
                                                     id="winddirection_120m"></span>&#176</div>
                                             <div><i class="fas fa-compass"></i> Wind Direction 180m: <span
                                                     id="winddirection_180m"></span>&#176</div>
-                                            <div><i class="fas fa-wind"></i> Wind Gusts 10m: <span
-                                                    id="windgusts_10m"></span>mph</div>
-                                            <div><i class="fas fa-thermometer-half"></i> Temperature 80m: <span
-                                                    id="temperature_80m"></span>&#176C</div>
-                                            <div><i class="fas fa-thermometer-half"></i> Temperature 120m: <span
-                                                    id="temperature_120m"></span>&#176C</div>
-                                            <div><i class="fas fa-thermometer-half"></i> Temperature 180m: <span
-                                                    id="temperature_180m"></span>&#176C</div>
-                                            <div><i class="fas fa-thermometer-full"></i> Temperature 2m Max: <span
-                                                    id="temperature_2m_max"></span>&#176C</div>
-                                            <div><i class="fas fa-thermometer-empty"></i> Temperature 2m Min: <span
-                                                    id="temperature_2m_min"></span>&#176C</div>
-                                            <div><i class="fas fa-sun"></i> Sunrise: <span id="sunrise"></span></div>
-                                            <div><i class="fas fa-sun"></i> Sunset: <span id="sunset"></span></div>
-                                            <div><i class="fas fa-cloud-sun-rain"></i> Precipitation Hours: <span
-                                                    id="precipitation_hours"></span>hour(s)</div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -208,9 +215,9 @@
                     </div>
                 </div>
                 <!-- Giphy place-->
-                <div class="col col-lg-6 col-md-6 col-sm-12">
+                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
 
-                    <div class="text-center m-4 pt-4">
+                    <div class="text-center mt-4 pt-4">
                         <div class="card text-center">
                             <header class="card-header text-center">
                                 <div>Pick-me-up</div>
@@ -222,11 +229,12 @@
             </div>
 
             <!-- Display searched cities -->
-            <div class="card m-4 p-4">
+            <div class="card mt-4 p-4">
                 <div class="search-history">
                     <h5>Recent searches:</h5>
                     <div id="recent-search"></div>
                 </div>
+                <br>
                 <button id="clear-history-btn">Clear History</button>
             </div>
     </main>
