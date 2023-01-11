@@ -96,8 +96,8 @@ function searchCity(city) {
             $("#temperature_2m_max").text(data.daily.temperature_2m_max[0]);
             $("#temperature_2m_min").text(data.daily.temperature_2m_min[0]);
 
-            $("#sunrise").text(data.daily.sunrise[0]);
-            $("#sunset").text(data.daily.sunset[0]);
+            $("#sunrise").text((data.daily.sunrise[0]).slice(11));
+            $("#sunset").text((data.daily.sunset[0]).slice(11));
 
             $("#precipitation_hours").text(data.daily.precipitation_hours[0]);
 
