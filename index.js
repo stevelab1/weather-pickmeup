@@ -189,15 +189,8 @@ dropdownItems.forEach((item) => {
         // Get the URL of the GIF
         console.log(data.data);
         var i = [Math.floor(Math.random() * 20)];
-        var gifUrl = data.data[i].images.original.url;
-        console.log(gifUrl);
-        // Create an image element and set its src to the GIF URL
-        var gifImage = document.createElement("img");
-        gifImage.src = gifUrl;
-
-        // Append the image to the gifContainer
-        var gifContainer = document.querySelector("#suggested-gif");
-        gifContainer.appendChild(gifImage);
+        var gifUrl = data.data[i].images.downsized_large.url;
+        appendGIF(gifUrl);
       });
   });
 });

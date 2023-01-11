@@ -1,29 +1,60 @@
-.city-names {
-  align-items: center;
-  padding: 6px 30px;
-  border-radius: 6px;
-  border: none;
-  margin: 10px;
+body{
+  background: #343a40;
   color: #fff;
-  background: #007bff;
-  background-origin: border-box;
-  user-select: none;
-  -webkit-user-select: none; touch-action: manipulation;
 }
-  
+
+.city-names {
+align-items: center;
+padding: 6px 30px;
+border-radius: 6px;
+border: none;
+margin: 10px;
+color: #fff;
+background: #5ad1cd;
+background-origin: border-box;
+user-select: none;
+-webkit-user-select: none; touch-action: manipulation;
+}
+
+/* Override button appearance */
+.btn-primary {
+background-color: #5ad1cd;
+border-color: #5ad1cd;
+}
+
+.btn-primary:hover {
+  background: #f07e6e;
+  }
+
+.card {
+  background-color: transparent;
+}
+
 .city-names:hover {
-  background: #0275d8;
+  background: #f07e6e;
   background-origin: border-box;
   transition: 0.7s;
 }
 
 #bg-image {
-  position: relative;
-  overflow: hidden;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position:50%;
-} 
+position: relative;
+overflow: hidden;
+background-repeat: no-repeat;
+background-size: cover;
+background-position:50%;
+}
+
+#suggested-gif {
+  background: #343a40;
+}
+
+#bg-title-gif  {
+position: relative;
+overflow: hidden;
+background-repeat: no-repeat;
+background-size: cover;
+background-position:50%;
+}
 
 /* .clear {
   background-color: transparent;
