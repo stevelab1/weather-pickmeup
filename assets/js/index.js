@@ -1,4 +1,3 @@
-// STEPHEN's Code
 // Assign HTML Elements to variables
 var searchBtn = document.querySelector("#search-button");
 var userInput = document.querySelector("#user-search-input");

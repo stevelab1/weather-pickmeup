@@ -11,7 +11,6 @@ function getGIF() {
 
     // Creating an AJAX call for the specific movie button being clicked
     $.ajax({url: queryURL, method: "GET"}).then(function (response) {
-        // console.log(JSON.stringify(response));
         // Check if a gif was returned at all
         if (response.data.length > 0) { // Retrieving the URL for the gif
             var gifURL = response.data[0].images.downsized_large.url;
