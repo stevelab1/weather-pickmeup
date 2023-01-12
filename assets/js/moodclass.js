@@ -10,7 +10,7 @@ function getGIF() {
     var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + API_KEY + "&q=" + searchQuery + "&limit=1&offset=0&rating=g&lang=en";
 
     // Creating an AJAX call for the specific movie button being clicked
-    $.ajax({url: queryURL, method: "GET"}).then(function (response) {
+    $.ajax({ url: queryURL, method: "GET" }).then(function (response) {
         // Check if a gif was returned at all
         if (response.data.length > 0) { // Retrieving the URL for the gif
             var gifURL = response.data[0].images.downsized_large.url;
@@ -48,39 +48,39 @@ function checkWeather(weatherCode) {
 
     var bgImage = "";
 
-   // WMO Weather interpretation codes (WW): https://open-meteo.com/en/docs#latitude=0&longitude=0&current_weather=true
-   // Code - Description
-   switch (weatherCode) {
+    // WMO Weather interpretation codes (WW): https://open-meteo.com/en/docs#latitude=0&longitude=0&current_weather=true
+    // Code - Description
+    switch (weatherCode) {
         // 0 - Clear sky
-        case 0: 
+        case 0:
             weatherClass.weatherDescription = "Clear sky";
             weatherClass.gifSuggestion = "cute+cat+sun"; //OK
             bgImage = "url('https://mdbgo.io/ascensus/mdb-advanced/img/clear.gif')";
             break;
         // 1, 2, 3 - Mainly clear, partly cloudy, and overcast
-        case 1: 
+        case 1:
             weatherClass.weatherDescription = "Mainly clear";
             weatherClass.gifSuggestion = "puppy+aww"; //OK
             bgImage = "url('https://mdbgo.io/ascensus/mdb-advanced/img/clear.gif')";
             break;
-        case 2: 
+        case 2:
             weatherClass.weatherDescription = "Partly cloudy";
             weatherClass.gifSuggestion = "sweater+weather"; //OK
             bgImage = "url('https://mdbgo.io/ascensus/mdb-advanced/img/clouds.gif')";
             break;
-        case 3: 
+        case 3:
             weatherClass.weatherDescription = "Overcast";
             weatherClass.gifSuggestion = "sweater+owl"; //OK
             bgImage = "url('https://mdbgo.io/ascensus/mdb-advanced/img/clouds.gif')";
             break;
         // 45, 48 - Fog and depositing rime fog
-        case 45: case 48: 
+        case 45: case 48:
             weatherClass.weatherDescription = "Fog";
             weatherClass.gifSuggestion = "headlight+cat"; //OK
             bgImage = "url('https://mdbgo.io/ascensus/mdb-advanced/img/fog.gif')";
             break;
         // 51, 53, 55 - Drizzle: Light, moderate, and dense intensity
-        case 51: case 53: case 55: 
+        case 51: case 53: case 55:
             weatherClass.weatherDescription = "Drizzle";
             weatherClass.gifSuggestion = "drizzle+roker"; //OK
             bgImage = "url('./assets/img/drizzle.gif')";
@@ -103,47 +103,47 @@ function checkWeather(weatherCode) {
             bgImage = "url('https://mdbgo.io/ascensus/mdb-advanced/img/rain.gif')";
             break;
         // 66, 67 - Freezing Rain: Light and heavy intensity
-        case 66: case 67: 
+        case 66: case 67:
             weatherClass.weatherDescription = "Freezing rain";
             weatherClass.gifSuggestion = "hot+cocoa"; //OK
             bgImage = "url('https://mdbgo.io/ascensus/mdb-advanced/img/rain.gif')";
             break;
         // 71, 73, 75 - Snow fall: Slight, moderate, and heavy intensity
-        case 71: case 73: case 75: 
+        case 71: case 73: case 75:
             weatherClass.weatherDescription = "Snowing";
             weatherClass.gifSuggestion = "winter+coffee+dayao"; //OK
             bgImage = "url('https://mdbgo.io/ascensus/mdb-advanced/img/snow.gif')";
             break;
         // 77 - Snow grains
-        case 77: 
+        case 77:
             weatherClass.weatherDescription = "Snow grains";
             weatherClass.gifSuggestion = "rolling+tian"; //OK
             bgImage = "url('https://mdbgo.io/ascensus/mdb-advanced/img/snow.gif')";
             break;
         // 80, 81, 82 - Rain showers: Slight, moderate, and violent
-        case 80: case 81: case 82: 
+        case 80: case 81: case 82:
             weatherClass.weatherDescription = "Rain showers";
             weatherClass.gifSuggestion = "summer+sun+shower"; //OK
             bgImage = "url('https://mdbgo.io/ascensus/mdb-advanced/img/rain.gif')";
             break;
         // 85, 86 - Snow showers slight and heavy
-        case 85: case 86: 
+        case 85: case 86:
             weatherClass.weatherDescription = "Snow showers";
             weatherClass.gifSuggestion = "snowman+pudgy"; //OK
             bgImage = "url('https://mdbgo.io/ascensus/mdb-advanced/img/snow.gif')";
             break;
         // 95 - Thunderstorm: Slight or moderate
-        case 95: 
+        case 95:
             weatherClass.weatherDescription = "Thunderstorm";
             weatherClass.gifSuggestion = "Stormy-Weather-family-guy"; //OK
             bgImage = "url('https://mdbgo.io/ascensus/mdb-advanced/img/thunderstorm.gif')";
             break;
         // 96, 99 - Thunderstorm with slight and heavy hail
-        case 96: case 99: 
+        case 96: case 99:
             weatherClass.weatherDescription = "Thunderstorm with hail";
             weatherClass.gifSuggestion = "winter+shelter"; //OK
             bgImage = "url('https://mdbgo.io/ascensus/mdb-advanced/img/thunderstorm.gif')";
-            break;        
+            break;
         // default (none of the above)
         default:
             weatherClass.weatherDescription = "Unknown weather code: " + weatherCode;
