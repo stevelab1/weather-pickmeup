@@ -26,7 +26,7 @@ This application is an ode to all people with Seasonal Affective Disorder (SAD) 
 
 ### Initial wireframe
 
-![Initial wireframe](initial-wireframe.jpg)
+![Initial wireframe](/assets/img/initial-wireframe.jpg)
 
 
 ### User Stories

@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
     <!-- Local CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Weather Pick-me-up!</title>
 </head>
 
@@ -53,12 +53,12 @@
     <main>
 
         <!-- Dark mode Toggler -->
-        
+
         <h5>Dark Mode:</h5>
         <label class="switch">
             <input type="checkbox" id="dark-mode-switch">
             <span class="slider round"></span>
-          </label>
+        </label>
         <!-- Welcome text -->
         <h1 class="text-center">Hello, friend!</h1>
         <h2 id="form-heading" class="mt-1 form-label text-center">
@@ -95,7 +95,8 @@
                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                     <!-- Selected city's current weather -->
                     <div class="text-center mt-4 pt-4">
-                        <div id="bg-image" class="card border-0 text-white shadow-4-strong" style="background-image: url('./assets/img/clouds.gif')">
+                        <div id="bg-image" class="card border-0 text-white shadow-4-strong"
+                            style="background-image: url('./assets/img/clouds.gif')">
                             <header class="card-header text-center">
                                 <div class="title-text-weather">
                                     <div class="title-line-weather">
@@ -161,8 +162,6 @@
                                             <div><i class="fas fa-thermometer-full"></i> Max Temp Today: <span
                                                     id="temperature_2m_max"></span>&#176C</div>
                                             <hr>
-                                            <!-- <div><i class="fas fa-tint"></i> Relative Humidity 2m: <span
-                                                    id="relativehumidity_2m"></span>%</div> -->
                                             <div><i class="fas fa-cloud-sun-rain"></i> Precipitation Today: <span
                                                     id="precipitation_hours"></span> hour(s)</div>
                                             <div><i class="fas fa-snowflake"></i> Snow: <span id="snow_depth"></span> in
@@ -170,8 +169,6 @@
                                             <hr>
                                             <div><i class="fas fa-cloud"></i> Cloud Cover: <span
                                                     id="cloudcover"></span>%</div>
-                                            <!-- <div><i class="fas fa-eye"></i> Visibility: <span
-                                                    id="visibility"></span>mile(s)</div> -->
                                             <hr>
                                             <div><i class="fas fa-wind"></i> Wind Speed 10m: <span
                                                     id="windspeed_10m"></span> mph</div>
@@ -200,15 +197,19 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                <!-- Giphy place-->
+
+                    <!-- Giphy place-->
                     <div class="text-center mt-4 pt-4">
-                        <div id="bg-title-gif" class="card border-0 text-white shadow-4-strong" style="background-image: url('./assets/img/clouds.gif')">
+                        <div id="bg-title-gif" class="card border-0 text-white shadow-4-strong"
+                            style="background-image: url('./assets/img/clouds.gif')">
                             <header class="card-header gif-header text-center">
                                 <p>GIF ME</p>
                             </header>
-                            <div id="suggested-gif" class="card-body"><img src="https://media.giphy.com/media/jsm7XMcyeTFJE4vHzO/giphy.gif" id="placeholder-gif" alt="placeholder-gif"></div>
+                            <div id="suggested-gif" class="card-body"><img
+                                    src="https://media.giphy.com/media/jsm7XMcyeTFJE4vHzO/giphy.gif"
+                                    id="placeholder-gif" alt="placeholder-gif"></div>
                         </div>
                     </div>
                 </div>
@@ -246,8 +247,8 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <!-- JavaScript -->
-    <script src="moodclass.js"></script>
-    <script src="index.js"></script>
+    <script src="assets/js/moodclass.js"></script>
+    <script src="assets/js/index.js"></script>
 </body>
 
 </html>
