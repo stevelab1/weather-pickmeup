@@ -1,10 +1,8 @@
-# weather-pickmeup
-
-## Weather Pick-Me-Up
+# Weather Pick-Me-Up
 
 ![badmath](https://img.shields.io/badge/JavaScript-58%25-%23efd81d)&nbsp;&nbsp;&nbsp;![badmath](https://img.shields.io/badge/HTML-35%25-%23e34c26)&nbsp;&nbsp;&nbsp;![badmath](https://img.shields.io/badge/CSS-7%25-%23563d7c)
 
-### About
+## About
 
 Have you ever felt down when there's really bad weather outside?
 </br>
